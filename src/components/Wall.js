@@ -48,10 +48,10 @@ export const Wall = () => {
     onNavigate('/');
   });
 
-  buttonPost.addEventListener('submit', () => {
+  buttonPost.addEventListener('click', () => {
     const data = {
       text: inputPost.value,
-    };
+    }; console.log(data);
     posts(data);
   });
 

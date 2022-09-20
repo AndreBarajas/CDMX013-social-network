@@ -5,12 +5,10 @@ import { app } from './config.js';
 // Inicializamos Firestore
 const db = getFirestore(app);
 const dbRef = collection(db, 'post');
-export const posts = (data) => addDoc(collection(data, dbRef)
+export const posts = (data) => addDoc(dbRef, data)
   .then((docRef) => {
     console.log('Document has been added successfully');
   })
   .catch((error) => {
     console.log(error);
-  }));
-
-  
+  });
