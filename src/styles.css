@@ -450,6 +450,10 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     /*width: 3vw;*/
     height: 3vh;
     justify-content: right;
+   
+}
+img{
+    border: solid transparent;
 }
 .iconDelete{
     margin-left: 80%;
