@@ -117,9 +117,9 @@ body {
     text-align: center;
     align-items: center;
     width: 85vw;
-    height: 60vh;
-    margin-top: 40px;
-    margin: 20px;
+    /* height: 60vh; */
+    /* margin-top: 40px 20px 20px 20px; */
+    margin: 40px 20px 20px 20px;
     left: 40%;
     padding: 3px;
     background: rgba( 218, 238, 231, 0.8 );
@@ -223,9 +223,9 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     text-align: center;
     align-items: center;
     width: 85vw;
-    height: 60vh;
-    margin-top: 40px;
-    margin: 20px;
+    /* height: 60vh; */
+    /* margin-top: 40px; */
+    margin: 40px 20px 20px 20px;
     left: 40%;
     padding: 3px;
     background: rgba( 218, 238, 231, 0.8 );
@@ -377,7 +377,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 12px );
 -webkit-backdrop-filter: blur( 12px );
-border-radius: 10px;
+ /* border-radius: 10px; */
 border: 1px solid rgba( 255, 255, 255, 0.18 );
     color: black;
 }
@@ -402,7 +402,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 7.5px );
 -webkit-backdrop-filter: blur( 7.5px );
-border-radius: 10px;
+/* border-radius: 10px; */
 border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding-top: 5vh;
     margin-left: 0px;

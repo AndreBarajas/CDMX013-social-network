@@ -57,7 +57,7 @@ export const Register = () => {
         onNavigate('/login');
         const user = userCredential.user;
         // console.log(inputUser.value);
-        console.log(nameUser.value);
+        // console.log(nameUser.value);
         // ...
       })
         .catch((error) => {

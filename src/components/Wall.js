@@ -64,7 +64,8 @@ export const Wall = () => {
     } else {
       const data = {
         text: inputPost.value,
-        email: auth.currentUser.email,
+        email: auth.currentUser.displayName ? auth.currentUser.displayName : auth.currentUser.email,
+        uid: auth.currentUser.uid,
         createdAt: serverTimestamp(),
         date: Date.now(),
         likes: 0,
@@ -73,7 +74,7 @@ export const Wall = () => {
       if (!editStatus) { // agregado para considerar el editado de post
         savePosts(data);
       } else {
-        console.log('actualizando');
+        // console.log('actualizando');
         updatePost(id, { text: inputPost.value });
         editStatus = false;
         buttonPost.src = './images/send1.png';
@@ -100,6 +101,7 @@ export const Wall = () => {
       const userTitle = document.createElement('h4');
       userTitle.className = 'usertitle';
       userTitle.textContent = post.email;
+
       //  icon section 1 ///////////////////////////
       const iconSection1 = document.createElement('div');
       iconSection1.className = 'iconSection';
@@ -118,7 +120,7 @@ export const Wall = () => {
       iconLike.className = 'iconLike';
       counterLikes.className = 'counterLikes';
       iconLike.src = './images/iconLike.png';
-      counterLikes.textContent = 0;
+      counterLikes.textContent = post.likes;
 
       // icono comentar
       const iconComment = document.createElement('img');
@@ -135,7 +137,8 @@ export const Wall = () => {
       // console.log(doc.id);
 
       // Solo mis publicaciones
-      if (post.email === auth.currentUser.email) {
+      if (post.uid === auth.currentUser.uid) {
+        console.log(auth.currentUser);
         iconDelete.src = './images/iconDelete.png';
         iconEdit.src = './images/iconEdit.png';
         // Borrar publicaciones
@@ -167,7 +170,6 @@ export const Wall = () => {
           counterLikes.value = likesEdit.likes - 1;
           counterLikes.textContent = counterLikes.value;
           console.log(counterLikes.value);
-          // //   counterLikes.value = likesEdit + 1;
           updatePost(doc.id, { likes: counterLikes.value });
           bandera = 0;
         }
@@ -181,4 +183,4 @@ export const Wall = () => {
   containerNewsWall.append(newsWallTitle, noNewsWall);
   div.append(containerBack, containerContent, containerNewsWall);
   return div;
-};
+}; // segundo push
