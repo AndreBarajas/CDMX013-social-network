@@ -23,6 +23,7 @@ const noNewsWall = document.createElement('p');
 
 let editStatus = false;
 let id = '';
+let bandera = 0;
 
 buttonBack.src = './images/arrowBack.png'; //  buttonBack.textContent = '<';
 headerWall.src = './images/gorro.png'; // headerWall.src = './images/logochef.jpg';
@@ -156,11 +157,20 @@ export const Wall = () => {
       iconLike.addEventListener('click', async (e) => {
         const doc2 = await getPost(doc.id); // acceder al objeto que contiene identificador especifico
         const likesEdit = doc2.data();
-        counterLikes.value = likesEdit.likes + 1;
-        counterLikes.textContent = counterLikes.value;
-        console.log(counterLikes.value);
-        // //   counterLikes.value = likesEdit + 1;
-        updatePost(doc.id, { likes: counterLikes.value });
+        if (bandera === 0) {
+          counterLikes.value = likesEdit.likes + 1;
+          counterLikes.textContent = counterLikes.value;
+          console.log(counterLikes.value);
+          bandera = 1;
+          updatePost(doc.id, { likes: counterLikes.value });
+        } else if (bandera !== 0) {
+          counterLikes.value = likesEdit.likes - 1;
+          counterLikes.textContent = counterLikes.value;
+          console.log(counterLikes.value);
+          // //   counterLikes.value = likesEdit + 1;
+          updatePost(doc.id, { likes: counterLikes.value });
+          bandera = 0;
+        }
       });
     });
   });
