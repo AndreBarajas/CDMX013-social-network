@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import {
-  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, TwitterAuthProvider, GithubAuthProvider,
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, TwitterAuthProvider, GithubAuthProvider, signOut,
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { app } from './config.js';
 import { onNavigate } from '../main.js';
@@ -75,3 +75,6 @@ export const verifyGitHub = () => signInWithPopup(auth, providerGithub)
 
 // Obtén la información de perfil de un usuario de un proveedor específico
 export const user = auth.currentUser;
+
+// Log Out
+export const logOut = () => signOut(auth);

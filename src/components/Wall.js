@@ -4,12 +4,13 @@ import { onNavigate } from '../main.js';
 import {
   savePosts, onGetPosts, deletePost, getPost, updatePost,
 } from '../lib/store.js';
-import { auth } from '../lib/auth.js';
+import { auth, logOut } from '../lib/auth.js';
 
 const div = document.createElement('div');
 const containerBack = document.createElement('div');
 const buttonBack = document.createElement('img');
 const headerWall = document.createElement('img');
+const headerLogOut = document.createElement('img');
 const containerContent = document.createElement('form');
 const greeting = document.createElement('h2');
 const questionPost = document.createElement('p');
@@ -26,10 +27,11 @@ let id = '';
 let bandera = 0;
 
 buttonBack.src = './images/arrowBack.png'; //  buttonBack.textContent = '<';
-headerWall.src = './images/gorro.png'; // headerWall.src = './images/logochef.jpg';
+headerWall.src = './images/gorro1.png'; // headerWall.src = './images/logochef.jpg';
+headerLogOut.src = './images/iconLogout.png';
 greeting.textContent = '¡Hola, bienvenido! 🖐';
 questionPost.textContent = '¿Quieres compartir algo?';
-inputPost.placeholder = 'Escribe aqui... ';
+inputPost.placeholder = '   Escribe aqui... ';
 buttonPost.src = './images/send1.png';
 errorMessagePost.textContent = ''; // Si hay error lo despliega aquí
 newsWallTitle.textContent = 'Novedades';
@@ -42,6 +44,7 @@ containerNewsWall.className = 'divCenterW';
 containerNewsWall.setAttribute('id', 'novedades');
 buttonBack.className = 'buttonBack';
 headerWall.className = 'headerWall';
+headerLogOut.className = 'headerLogOut';
 greeting.className = 'titlePost';
 questionPost.className = 'paragraphWall';
 inputPost.className = 'inputPost';
@@ -49,6 +52,21 @@ buttonPost.className = 'buttonPost';
 errorMessagePost.className = 'errorMessagesR';
 newsWallTitle.className = 'titlePost';
 noNewsWall.className = 'paragraphNoNewsWall';
+
+headerLogOut.addEventListener('click', () => {
+  logOut()
+    .then(() => {
+      // Sign-out successful.
+      // eslint-disable-next-line no-alert
+      alert('Sign-out successful.');
+      onNavigate('/');
+    })
+    .catch((error) => {
+      // An error happened.
+      // eslint-disable-next-line no-alert
+      alert('An error happened.');
+    });
+});
 
 export const Wall = () => {
   buttonBack.addEventListener('click', () => {
@@ -60,6 +78,7 @@ export const Wall = () => {
 
   buttonPost.addEventListener('click', () => {
     if (inputPost.value === '') {
+      // eslint-disable-next-line no-alert
       alert('No has escrito aún');
     } else {
       const data = {
@@ -122,23 +141,23 @@ export const Wall = () => {
       iconLike.src = './images/iconLike.png';
       counterLikes.textContent = post.likes;
 
-      // icono comentar
-      const iconComment = document.createElement('img');
-      const counterComment = document.createElement('p');
-      iconComment.className = 'iconComment';
-      counterComment.className = 'counterLikes';
-      iconComment.src = './images/iconComment.png';
-      counterComment.textContent = '0';
+      // // icono comentar
+      // const iconComment = document.createElement('img');
+      // const counterComment = document.createElement('p');
+      // iconComment.className = 'iconComment';
+      // counterComment.className = 'counterLikes';
+      // iconComment.src = './images/iconComment.png';
+      // counterComment.textContent = '0';
 
       iconSection1.append(iconDelete, iconEdit);
-      iconSection.append(iconLike, counterLikes, iconComment, counterComment);
+      iconSection.append(iconLike, counterLikes);
       sectionAll.append(iconSection1, userTitle, textPosts, iconSection);
       noNewsWall.append(sectionAll);
       // console.log(doc.id);
 
       // Solo mis publicaciones
       if (post.uid === auth.currentUser.uid) {
-        console.log(auth.currentUser);
+        // console.log(auth.currentUser);
         iconDelete.src = './images/iconDelete.png';
         iconEdit.src = './images/iconEdit.png';
         // Borrar publicaciones
@@ -163,13 +182,13 @@ export const Wall = () => {
         if (bandera === 0) {
           counterLikes.value = likesEdit.likes + 1;
           counterLikes.textContent = counterLikes.value;
-          console.log(counterLikes.value);
+          // console.log(counterLikes.value);
           bandera = 1;
           updatePost(doc.id, { likes: counterLikes.value });
         } else if (bandera !== 0) {
           counterLikes.value = likesEdit.likes - 1;
           counterLikes.textContent = counterLikes.value;
-          console.log(counterLikes.value);
+          // console.log(counterLikes.value);
           updatePost(doc.id, { likes: counterLikes.value });
           bandera = 0;
         }
@@ -177,7 +196,7 @@ export const Wall = () => {
     });
   });
 
-  containerBack.append(buttonBack, headerWall);
+  containerBack.append(buttonBack, headerWall, headerLogOut);
   divNewPost.append(inputPost, buttonPost);
   containerContent.append(greeting, questionPost, divNewPost, errorMessagePost);
   containerNewsWall.append(newsWallTitle, noNewsWall);

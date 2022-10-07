@@ -7,7 +7,7 @@ const containerContent = document.createElement('div');
 const headerRegister = document.createElement('p');
 const title = document.createElement('h2');
 const buttonRegisterL = document.createElement('button');
-const inputUser = document.createElement('input');
+// const inputUser = document.createElement('input');
 const inputEmail = document.createElement('input');
 const inputPass = document.createElement('input');
 const errorMessageRegister = document.createElement('div'); // error messages
@@ -20,7 +20,7 @@ const hrefLogin = document.createElement('href');
 buttonBack.src = './images/arrowBack.png'; //  buttonBack.textContent = '<';
 headerRegister.textContent = 'Bienvenida';
 title.textContent = 'Crea tu cuenta';
-inputUser.placeholder = 'Usuario';
+// inputUser.placeholder = 'Usuario';
 inputEmail.placeholder = 'Correo electrónico';
 inputPass.placeholder = 'Contraseña';
 buttonRegisterL.textContent = 'Registrarse';
@@ -30,11 +30,11 @@ paragraph2.textContent = '¿Ya tienes cuenta?';
 hrefLogin.textContent = 'Inicia sesión';
 
 containerContent.className = 'divCenterR';
-containerBack.className = 'containerBack';
-buttonBack.className = 'buttonBack'; /* containerBack.className = 'containerBack'; */
+containerBack.className = 'containerBackR';
+buttonBack.className = 'buttonBackL'; /* containerBack.className = 'containerBack'; */
 headerRegister.className = 'headerRegister';
 title.className = 'titleRegister';
-inputUser.className = 'inputRegister';
+// inputUser.className = 'inputRegister';
 inputEmail.className = 'inputRegister';
 inputPass.className = 'inputRegister';
 errorMessageRegister.className = 'errorMessagesR'; // errores
@@ -45,11 +45,11 @@ paragraph2.className = 'paragraph2';
 hrefLogin.className = 'hrefLogin';
 
 inputPass.type = 'password';
-const nameUser = inputUser;
+// const nameUser = inputUser;
 
 export const Register = () => {
   buttonRegisterL.addEventListener('click', () => {
-    if (inputUser.value === '' || inputEmail.value === '' || inputPass.value === '') {
+    if (inputEmail.value === '' || inputPass.value === '') {
       errorMessageRegister.innerHTML = 'Llena los campos requeridos';
     } else {
       newUser(inputEmail.value, inputPass.value).then((userCredential) => {
@@ -81,7 +81,7 @@ export const Register = () => {
 
   containerBack.append(buttonBack, headerRegister);
   cointenerQuestion.append(paragraph2, hrefLogin);
-  containerContent.append(title, inputUser, inputEmail, inputPass, errorMessageRegister, buttonRegisterL, termsLegend, cointenerQuestion);
+  containerContent.append(title, inputEmail, inputPass, errorMessageRegister, buttonRegisterL, termsLegend, cointenerQuestion);
   div.append(containerBack, containerContent);
 
   return div;

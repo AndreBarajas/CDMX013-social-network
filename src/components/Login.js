@@ -30,7 +30,7 @@ paragraphLogin.textContent = '__________________o__________________';
 inputMail.placeholder = 'Correo electrónico';
 inputPasw.placeholder = 'Contraseña';
 buttonLoginStart.textContent = 'Iniciar sesión';
-paragraphReg.textContent = '¿No tienes una cuenta?';
+paragraphReg.textContent = '¿No tienes una cuenta?     ';
 buttonRegisterReturn.textContent = 'Registrate';
 
 containerContentL.className = 'divLogin';
