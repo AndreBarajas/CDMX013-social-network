@@ -517,3 +517,71 @@ Otras:
 * [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
 * [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
 * [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
+
+
+DEFINICIÓN DEL PRODUCTO 
+
+En este proyecto se construyo una  Red Social con la temática de Recetas de cocina caseras.
+El público al que va dirigido son esas personas que gustan tener variedad de recetas para preparar o compartir. 
+Resolviendo así la problemática de que a veces no sabe uno que cocinar, de que se tenga un menú variado y se puedan probar distintas comidas; asimismo compartir esas ideas divertidas, originales, sabrosas de recetas. 
+
+Para ingresar a la aplicación es con diferentes tipos de autentificación los cuales son:
+-Crear un usuario y contraseña con un correo electrónico.
+-Ingresar por medio de la cuenta de Google.
+-Ingresar por medio de la cuenta de Twitter.
+-Ingresar por medio de la cuenta de GitHub.
+
+Prototipo de alta fidelidad (Figma)
+
+En este prototipo se muestra el diseño de las distintas vistas,la primera es  la pagina principal de la aplicación,la segunda vista contiene el iniciar sesion que puede ser por medio de Goggle, Twitter, Github o un correo y contraseña, la tercer vista correpsonde al apartadp de Registrate esto es para dar de alta un usuario y la ultima vista es donde se pueden leer las recetas ; asimismo crear nuevas recetas publicarlas, editarlas y reaccionar a estas.
+
+![figma11](https://user-images.githubusercontent.com/108832268/194422588-b509af0a-6658-41e6-9562-9cfeeb100da3.jpg)
+
+
+
+Seleccionamos un estilo basado en los colores de Starbucks, considerando una fuente de texto legible y elegante que fuera acorde con la paleta de colores.
+
+Empleamos un logotipo de un gorro de chef con un corazón al centro para que se identifiqué desde el header y sea algo relacionado con la tematica principal.
+
+Como parte del estilo, al pasar el cursor por la seccion de editar y dar like cambian de color y se les da sombra para que sea más atractivo.
+
+
+![figma 2](https://user-images.githubusercontent.com/108832268/194422940-211210ff-bef7-4441-8411-232b20534a9b.jpg)
+
+
+DESARROLLO 
+
+para el desarrollo del proyecto lo dividimos en historias de usuario:
+
+HISTORIA DE USUARIO 1 
+
+PANTALLA PRINCIPAL
+
+Yo como usuaria de la app quiero poder ver una imagen relativa al tema, y  dos botones:
+ a) Inicio de sesión .
+ b) Registrate
+
+HISTORIA DE USUARIO 2 
+
+Yo como usuario visitante de la aplicación quiero poder registrarme en la aplicación e ingresar con ese correo.
+Si el correo y/o contraseña son incorrectos, se despliega un mensaje y no se permite el acceso.
+
+HISTORIA DE USUARIO 3
+
+Yo como usuario visitante quiero poder iniciar sesión con Google, Twitter o GitHub, ver los botones correspondientes con su logo y asi el acceso sea más rápido. 
+Se permite la autenticación con Google, Twitter y Github, pudiendo iniciar sesión con cualquiera de estos tres, además del correo registrado.
+
+HISTORIA DE USUARIO 4
+
+Al ya haber ingresado en la aplicación el usuario puede escribir una receta la cual se visualiza en el muro, con el nombre del usuario que escribio.
+
+HISTORIA DE USUARIO 5 
+
+Yo como usuario quiero poder eliminar la receta que compartí, que sea fácil el acceso con un icono para poder realizar esta tarea.
+HISTORIA DE USUARIO 6 
+Yo como usuario quiero poder editar la receta que compartí, que sea fácil el acceso con un icono para poder realizar esta tarea.
+
+HISTORIA DE USUARIO 7 
+Yo como usuario quiero poder reaccionar a  la receta que compartí, así como a las recetas de los otros usuarios, mediante un icono que vaya contabilizando el numero de likes. 
+![figma 3](https://user-images.githubusercontent.com/108832268/194423332-12615389-865a-4ff4-8f95-153427bd31ab.jpg)
+
